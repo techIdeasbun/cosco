@@ -15,7 +15,7 @@ class CreateCalificardisponibilidadesTable extends Migration
     {
         Schema::create('calificardisponibilidades', function (Blueprint $table) {
             $table->id();
-            $table->string('valoracion');
+            $table->integer('valoracion');
 
             $table->unsignedBigInteger('transporte_id');
             $table->unsignedBigInteger('ciudade_id');

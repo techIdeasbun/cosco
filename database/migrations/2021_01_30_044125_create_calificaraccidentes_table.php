@@ -15,7 +15,7 @@ class CreateCalificaraccidentesTable extends Migration
     {
         Schema::create('calificaraccidentes', function (Blueprint $table) {
             $table->id();
-            $table->string('valoracion');
+            $table->integer('valoracion');
 
             $table->unsignedBigInteger('transporte_id');
             $table->unsignedBigInteger('ciudade_id');
