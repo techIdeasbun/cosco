@@ -23,10 +23,10 @@ class CreateEstadohechosTable extends Migration
             $table->unsignedBigInteger('pedido_id');
             $table->unsignedBigInteger('supervisione_id');
 
-            $table->foreign('actividade_id')->references('id')->on('actividades')->onDelete('casade');
-            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('casade');
-            $table->foreign('supervisione_id')->references('id')->on('supervisiones')->onDelete('casade');
-
+            $table->foreign('actividade_id')->references('id')->on('actividades')->onDelete('cascade');
+            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');
+            $table->foreign('supervisione_id')->references('id')->on('supervisiones')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }

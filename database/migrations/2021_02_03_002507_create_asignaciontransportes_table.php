@@ -15,16 +15,17 @@ class CreateAsignaciontransportesTable extends Migration
     {
         Schema::create('asignaciontransportes', function (Blueprint $table) {
             $table->id();
+
             $table->double('cuota');
 
             $table->unsignedBigInteger('transporte_id');
             $table->unsignedBigInteger('ciudade_id');
             $table->unsignedBigInteger('pedido_id');
 
-            $table->foreign('transporte_id')->references('id')->on('transportes')->onDelete('casade');
-            $table->foreign('ciudade_id')->references('id')->on('ciudades')->onDelete('casade');
-            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('casade');
-
+            $table->foreign('transporte_id')->references('id')->on('transportes')->onDelete('cascade');
+            $table->foreign('ciudade_id')->references('id')->on('ciudades')->onDelete('cascade');
+            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }

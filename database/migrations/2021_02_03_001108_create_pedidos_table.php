@@ -15,13 +15,14 @@ class CreatePedidosTable extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
+
             $table->string('muelle');
             $table->string('codigo');
             $table->double('cantidad');
 
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('usuario_id');
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('casade');
+            $table->foreign('ussuario_id')->references('id')->on('usuarios')->onDelete('cascade');
 
             $table->timestamps();
         });

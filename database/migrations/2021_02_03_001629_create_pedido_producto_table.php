@@ -19,8 +19,8 @@ class CreatePedidoProductoTable extends Migration
             $table->unsignedBigInteger('pedido_id');
             $table->unsignedBigInteger('producto_id');
 
-            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('casade');
-            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('casade');
+            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');
+            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
 
             $table->timestamps();
         });

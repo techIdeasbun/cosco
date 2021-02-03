@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCalificarentregasTable extends Migration
+class CreateCalificaraccidentesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCalificarentregasTable extends Migration
      */
     public function up()
     {
-        Schema::create('calificarentregas', function (Blueprint $table) {
+        Schema::create('calificaraccidentes', function (Blueprint $table) {
             $table->id();
 
             $table->integer('valoracion');
@@ -21,9 +21,9 @@ class CreateCalificarentregasTable extends Migration
             $table->unsignedBigInteger('transporte_id');
             $table->unsignedBigInteger('ciudade_id');
 
-            $table->foreign('transporte_id')->references('id')->on('transportes')->onDelete('casade');
-            $table->foreign('ciudade_id')->references('id')->on('ciudades')->onDelete('casade');
-
+            $table->foreign('transporte_id')->references('id')->on('transportes')->onDelete('cascade');
+            $table->foreign('ciudade_id')->references('id')->on('ciudades')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }
@@ -35,6 +35,6 @@ class CreateCalificarentregasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calificarentregas');
+        Schema::dropIfExists('calificaraccidentes');
     }
 }
