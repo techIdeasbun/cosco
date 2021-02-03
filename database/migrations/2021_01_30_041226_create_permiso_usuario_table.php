@@ -19,8 +19,8 @@ class CreatePermisoUsuarioTable extends Migration
             $table->unsignedBigInteger('usuario_id');
             $table->unsignedBigInteger('permiso_id');
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('casade');
-            $table->foreign('permiso_id')->references('id')->on('permisos')->onDelete('casade');
+            $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('permiso_id')->references('id')->on('permisos')->onDelete('cascade');
             
             $table->timestamps();
         });

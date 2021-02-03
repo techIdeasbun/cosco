@@ -22,7 +22,7 @@ class CreatePedidosTable extends Migration
 
             $table->unsignedBigInteger('usuario_id');
 
-            $table->foreign('ussuario_id')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
 
             $table->timestamps();
         });

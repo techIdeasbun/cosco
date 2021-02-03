@@ -28,7 +28,8 @@ class CreateDespachosTable extends Migration
             $table->unsignedBigInteger('operadore_id');
             $table->unsignedBigInteger('supervisione_id');
             $table->unsignedBigInteger('bodega_id')->nullable();
-            $table->unsignedBigInteger('asignaciontransporte_:id');
+            $table->unsignedBigInteger('asignaciontransporte_id');
+            $table->unsignedBigInteger('bascula_id');
 
             $table->foreign('ciudade_id')->references('id')->on('ciudades')->onDelete('cascade');
             $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');
@@ -36,7 +37,8 @@ class CreateDespachosTable extends Migration
             $table->foreign('supervisione_id')->references('id')->on('supervisiones')->onDelete('cascade');
             $table->foreign('bodega_id')->references('id')->on('bodegas')->onDelete('cascade');
             $table->foreign('asignaciontransporte_id')->references('id')->on('asignaciontransportes')->onDelete('cascade');
-            
+            $table->foreign('bascula_id')->references('id')->on('basculas')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
