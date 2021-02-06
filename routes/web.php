@@ -15,7 +15,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+Route::get('/productos', function () {
+    return view('productos');
+})->name('productos');
+
+Route::get('/novedades', function () {
+    return view('novedades');
+})->name('novedades');
+
+Route::get('/nosotros', function () {
+    return view('nosotros');
+})->name('nosotros');
+
+Route::get('/contacto', function () {
+    return view('contacto');
+})->name('contacto');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
