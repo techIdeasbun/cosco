@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Operadore extends Model
 {
     use HasFactory;
+
+    // RElacion Uno A muchos
+    public function despacho(){
+        return $this->hasMany(Despacho::class);
+    }
 }

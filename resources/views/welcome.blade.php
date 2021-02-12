@@ -1,5 +1,41 @@
-<x-app-layout>
-
+<x-app-layout> 
+    <div class="container ">
+        <div class="py-10">
+            <h1 class="text-4xl text-center text-red-800 leading-8 font-extrabold">PRODUCTOS DESTACADOS</h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 justify-items-center">
+            <div>
+                <h2 class="text-2xl text-center text-red-800 leading-8 font-extrabold">GRANO</h2>
+            </div>              
+            <div>
+                <h2 class="text-2xl text-center text-red-800 leading-8 font-extrabold">CEREALES</h2>
+            </div> 
+            <div class="py-10">
+                <img src="{{ asset('/image/cosco.png') }}" alt="cosco">
+            </div>
+            <div class="py-10">
+                <img src="{{ asset('/image/cosco.png') }}" alt="cosco">
+            </div>
+            <div>
+                <p class="text-justify mx-8 py-10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, reprehenderit nihil reiciendis deleniti laboriosam repellendus facilis saepe id nesciunt quasi repudiandae, impedit culpa vitae exercitationem ducimus quam quas sequi unde?</p>    
+            </div>              
+            <div>
+                <p class="text-justify mx-8 py-10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, reprehenderit nihil reiciendis deleniti laboriosam repellendus facilis saepe id nesciunt quasi repudiandae, impedit culpa vitae exercitationem ducimus quam quas sequi unde?</p>    
+            </div>
+            <div class="py-10">
+                <img src="{{ asset('/image/cosco.png') }}" alt="cosco">
+            </div>
+            <div class="py-10">
+                <img src="{{ asset('/image/cosco.png') }}" alt="cosco">
+            </div>
+            <div>
+                <p class="text-justify mx-8 py-10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, reprehenderit nihil reiciendis deleniti laboriosam repellendus facilis saepe id nesciunt quasi repudiandae, impedit culpa vitae exercitationem ducimus quam quas sequi unde?</p>    
+            </div>              
+            <div>
+                <p class="text-justify mx-8 py-10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam, reprehenderit nihil reiciendis deleniti laboriosam repellendus facilis saepe id nesciunt quasi repudiandae, impedit culpa vitae exercitationem ducimus quam quas sequi unde?</p>    
+            </div>              
+        </div>       
+    </div>    
 </x-app-layout>
 
 {{-- <!DOCTYPE html>
@@ -9,7 +45,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Cosco</title>
-
+            <article >
+                <img src="{{ asset('/image/cosco.png') }}" alt="cosco">
+            </article>
+            <article>
+                <img src="{{ asset('/image/cosco.png') }}" alt="cosco">
+            </article> 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Bodega extends Model
 {
     use HasFactory;
+
+    //Relacion Uno A Muchos
+
+    public function despachos(){
+        return $this->hasMany(Despacho::class);
+    }
 }

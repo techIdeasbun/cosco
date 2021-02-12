@@ -31,6 +31,13 @@
             </main>
         </div>
 
+        <footer>
+            <div class="footer">
+                <div class="copyrights text-center">                    
+                    Copyright © 2021 Cosco Ltda. - Buenaventura, Valle Del Cauca. Todos los Derechos Reservados.
+                </div>
+            </div>
+        </footer>
         @stack('modals')
 
         @livewireScripts

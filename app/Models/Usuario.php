@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Usuario extends Model
 {
     use HasFactory;
+
+    // Relacion Uno A Muchos
+
+    public function despachos(){
+        return $this->hasMany(Despacho::class);
+    }
+
+    public function pedidos(){
+        return $this->hasMany(Pedido::class);
+    }
 }

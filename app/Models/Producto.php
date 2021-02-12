@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Producto extends Model
 {
     use HasFactory;
+
+    //Relacion Muchos a Muchos
+
+    public function pedidos(){
+        return $this->belongsToMany(Pedido::class);
+    }
 }
