@@ -40,9 +40,8 @@
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a href={{ route('home') }} class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
               <a href="{{ route('productos') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Productos</a>
-              <a href="{{ route('novedades') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Novedades</a>
               <a href="{{ route('nosotros') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Nosotros</a>
-              <a href="{{ route('contacto') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacto</a>
+              <a href="{{ route('contactanos.index') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contacto</a>
             </div>
           </div>
         </div>
@@ -102,9 +101,8 @@
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         <a href={{ route('home') }} class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
         <a href="{{ route('productos') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Productos</a>
-        <a href="{{ route('novedades') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Novedades</a>
         <a href="{{ route('nosotros') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Nosotros</a>
-        <a href="{{ route('contacto') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
+        <a href="{{ route('contactanos.index') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
       </div>
     </div>
   </nav>
