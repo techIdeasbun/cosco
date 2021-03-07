@@ -17,6 +17,7 @@ class CreateBodegasTable extends Migration
             $table->id();
             $table->string('nit');
             $table->string('nombre');
+            $table->string('slug');
             $table->string('telefono');
             $table->timestamps();
         });

@@ -9,6 +9,8 @@ class Actividade extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nombre'];
+
     // Relacion uno a muchos
 
     public function hechos(){
