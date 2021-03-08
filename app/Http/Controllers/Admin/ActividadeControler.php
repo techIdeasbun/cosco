@@ -28,12 +28,15 @@ class ActividadeControler extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre'=>'required|unique:actividades'
+            'nombre'=>'required|unique:actividades',
+            'slug' => 'required|unique:actividades'
         ]);
 
-        Actividade::create($request->all());
+       Actividade::create($request->all());
 
-        return redirect()->route('admin.actividades.index')->with('info','La Actividad Se Creo Con Exito');
+       return redirect()->route('admin.actividades.index')->with('info','La Actividad Se Creo Con Exito');
+
+      //return $request->all();
     }
 
     
@@ -52,7 +55,8 @@ class ActividadeControler extends Controller
     public function update(Request $request, Actividade $actividade)
     {
         $request->validate([
-            'nombre'=>'required|unique:actividades'
+            'nombre'=>'required|unique:actividades',
+            'slug' => "required|unique:actividades, slug, $actividade->id"
         ]);
 
         $actividade->update($request->all());

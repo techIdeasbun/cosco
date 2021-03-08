@@ -9,7 +9,12 @@ class Actividade extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre'];
+    protected $fillable = ['nombre', 'slug'];
+
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
 
     // Relacion uno a muchos
 
