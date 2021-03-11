@@ -239,16 +239,46 @@ return [
             'route'       => 'admin.home',
             'icon'        => 'fas fa-fw fa-tachometer-alt',            
         ],
-        ['header' => 'MENU PRINCIPAL'],
+        ['header' => 'CONTROL DE DESPACHO'],
         [
-            'text' => 'Actividades',
+            'text' => 'Administrar Actividades',
             'route'  => 'admin.actividades.index',
             'icon' => 'fas fa-fw fa-people-carry',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Administrar Basculas',
+            'route'  => 'admin.basculas.index',
+            'icon' => 'fas fa-fw fa-balance-scale',
+        ],
+        [
+            'text' => 'Administrar Bodegas',
+            'route'  => 'admin.bodegas.index',
+            'icon' => 'fas fa-fw fa-ethernet',
+        ],
+        [
+            'text' => 'Administrar Ciudades',
+            'route'  => 'admin.ciudades.index',
+            'icon' => 'fas fa-fw fa-city',
+        ],
+        [
+            'text' => 'Administrar Operadores',
+            'route'  => 'admin.operadores.index',
+            'icon' => 'fas fa-fw fa-users-cog',
+        ],
+        [
+            'text' => 'Administrar Productos',
+            'route'  => 'admin.productos.index',
+            'icon' => 'fas fa-fw fa-cookie',
+        ],
+        [
+            'text' => 'Administrar Supervisiones',
+            'route'  => 'admin.supervisiones.index',
+            'icon' => 'fas fa-fw fa-user-check',
+        ],
+        [
+            'text' => 'Administrar Transporte',
+            'route'  => 'admin.transportes.index',
+            'icon' => 'fas fa-fw fa-shuttle-van',
         ],
         [
             'text'    => 'multilevel',
