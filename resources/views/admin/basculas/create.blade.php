@@ -1,19 +1,19 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear Nueva Actividad')
+@section('title', 'Crear Nueva Bascula')
 
 @section('content_header')
-    <h1>Crear Actividad'</h1>
+    <h1>Crear Bascula</h1>
 @stop
 
 @section('content')
     <div class="card">
         <div class="card-body">
-            {!! Form::open(['route'=>'admin.actividades.store']) !!}
+            {!! Form::open(['route'=>'admin.basculas.store']) !!}
 
                 <div class="form-group">
                     {!! Form::label('nombre', 'Nombre') !!}
-                    {!! Form::text('nombre', null, ['class'=>'form-control','placeholder'=>'Ingrese El Nombre De La Actividad']) !!}
+                    {!! Form::text('nombre', null, ['class'=>'form-control','placeholder'=>'Ingrese El Nombre De La Bascula']) !!}
                 
                     @error('nombre')
                         <span class="text-danger">{{ $message }}</span>
@@ -27,10 +27,10 @@
                     @error('slug')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
-                </div> 
-
+                </div>             
+               
                 <div class="form-group">
-                    {!! Form::submit('Crear Actividad', ['class'=>'btn btn-primary']) !!}
+                    {!! Form::submit('Crear Bascula', ['class'=>'btn btn-primary']) !!}
                 </div>
                 
 

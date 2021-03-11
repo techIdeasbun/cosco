@@ -1,19 +1,19 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Actividad')
+@section('title', 'Editar Bascula')
 
-@section('Editar Actividad')
-    <h1>Cosco</h1>
+@section('content_header')
+    <h1>Editar Bascula</h1>
 @stop
 
 @section('content')
 <div class="card">
     <div class="card-body">
-        {!! Form::model($actividade, ['route'=>['admin.actividades.update',$actividade], 'method'=>'put']) !!}
+        {!! Form::model($bascula, ['route'=>['admin.basculas.update',$bascula], 'method'=>'put']) !!}
 
             <div class="form-group">
                 {!! Form::label('nombre', 'Nombre') !!}
-                {!! Form::text('nombre', null, ['class'=>'form-control','placeholder'=>'Ingrese El Nombre De La Actividad']) !!}
+                {!! Form::text('nombre', null, ['class'=>'form-control','placeholder'=>'Ingrese El Nombre De La Bascula']) !!}
             
                 @error('nombre')
                     <span class="text-danger">{{ $message }}</span>
@@ -30,7 +30,7 @@
             </div>
 
             <div class="form-group">
-                {!! Form::submit('Actualizar Actividad', ['class'=>'btn btn-primary']) !!}
+                {!! Form::submit('Actualizar Bascula', ['class'=>'btn btn-primary']) !!}
             </div>
             
 

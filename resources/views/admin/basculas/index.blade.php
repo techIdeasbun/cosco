@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Actividades')
+@section('title', 'Basculas')
 
 @section('content_header')
-    <h1>Listado de Actividades</h1>
+    <h1>Listado de Basculas</h1>
 @stop
 
 @section('content')
@@ -14,7 +14,7 @@
     @endif
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('admin.actividades.create') }}" class="btn btn-secondary ">Agregar Actividades</a>
+            <a href="{{ route('admin.basculas.create') }}" class="btn btn-secondary ">Agregar Basculas</a>
         </div>
         <div class="card-body">
             <table class="table table-stiped">
@@ -26,15 +26,15 @@
                     </tr>                    
                 </thead>
                 <tbody>
-                     @foreach ($actividades as $actividade)
+                     @foreach ($basculas as $bascula)
                         <tr>
-                            <td>{{ $actividade->id }}</td>
-                            <td>{{ $actividade->nombre }}</td>
+                            <td>{{ $bascula->id }}</td>
+                            <td>{{ $bascula->nombre }}</td>
                             <td width='10px'> 
-                                <a href="{{ route('admin.actividades.edit',$actividade) }}" class="btn btn-primary btn-sm">Editar</a>
+                                <a href="{{ route('admin.basculas.edit',$bascula) }}" class="btn btn-primary btn-sm">Editar</a>
                             </td>
                             <td width='10px'>
-                                <form action="{{ route('admin.actividades.destroy', $actividade) }}" method="post">
+                                <form action="{{ route('admin.basculas.destroy', $bascula) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>

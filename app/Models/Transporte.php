@@ -9,6 +9,13 @@ class Transporte extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nombre', 'slug'];
+
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
+
     //Relacion Uno A Muchos
 
     public function Asignaciones(){

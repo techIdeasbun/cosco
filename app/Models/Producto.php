@@ -9,6 +9,13 @@ class Producto extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nombre', 'slug'];
+
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
+
     //Relacion Muchos a Muchos
 
     public function pedidos(){
