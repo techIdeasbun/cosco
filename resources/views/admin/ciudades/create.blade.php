@@ -1,19 +1,19 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear Nueva Actividad')
+@section('title', 'Crear Nueva Ciudades')
 
 @section('content_header')
-    <h1>Crear Actividad'</h1>
+    <h1>Crear Ciudades</h1>
 @stop
 
 @section('content')
     <div class="card">
         <div class="card-body">
-            {!! Form::open(['route'=>'admin.actividades.store']) !!}
+            {!! Form::open(['route'=>'admin.ciudades.store']) !!}
 
                 <div class="form-group">
                     {!! Form::label('nombre', 'Nombre') !!}
-                    {!! Form::text('nombre', null, ['class'=>'form-control','placeholder'=>'Ingrese El Nombre De La Actividad']) !!}
+                    {!! Form::text('nombre', null, ['class'=>'form-control','placeholder'=>'Ingrese El Nombre De La Ciudad']) !!}
                 
                     @error('nombre')
                         <span class="text-danger">{{ $message }}</span>
@@ -30,7 +30,7 @@
                 </div> 
 
                 <div class="form-group">
-                    {!! Form::submit('Crear Actividad', ['class'=>'btn btn-primary']) !!}
+                    {!! Form::submit('Crear Ciudad', ['class'=>'btn btn-primary']) !!}
                 </div>
                 
 

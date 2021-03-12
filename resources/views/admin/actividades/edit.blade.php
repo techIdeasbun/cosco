@@ -2,8 +2,8 @@
 
 @section('title', 'Editar Actividad')
 
-@section('Editar Actividad')
-    <h1>Cosco</h1>
+@section('content_header')
+    <h1>Editar Actividad</h1>
 @stop
 
 @section('content')
