@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Actividades')
+@section('title', 'Productos')
 
 @section('content_header')
-    <h1>Listado de Actividades</h1>
+    <h1>Listado de Productos</h1>
 @stop
 
 @section('content')
@@ -14,7 +14,7 @@
     @endif
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('admin.actividades.create') }}" class="btn btn-secondary ">Agregar Actividades</a>
+            <a href="{{ route('admin.productos.create') }}" class="btn btn-secondary ">Agregar Producto</a>
         </div>
         <div class="card-body">
             <table class="table table-stiped">
@@ -26,15 +26,15 @@
                     </tr>                    
                 </thead>
                 <tbody>
-                     @foreach ($actividades as $actividade)
+                     @foreach ($productos as $producto)
                         <tr>
-                            <td>{{ $actividade->id }}</td>
-                            <td>{{ $actividade->nombre }}</td>
+                            <td>{{ $producto->id }}</td>
+                            <td>{{ $producto->nombre }}</td>
                             <td width='10px'> 
-                                <a href="{{ route('admin.actividades.edit',$actividade) }}" class="btn btn-primary btn-sm">Editar</a>
+                                <a href="{{ route('admin.productos.edit',$producto) }}" class="btn btn-primary btn-sm">Editar</a>
                             </td>
                             <td width='10px'>
-                                <form action="{{ route('admin.actividades.destroy', $actividade) }}" method="post">
+                                <form action="{{ route('admin.productos.destroy', $producto) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>

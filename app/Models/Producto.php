@@ -9,7 +9,7 @@ class Producto extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre', 'slug'];
+    protected $fillable = ['nombre', 'slug','calidad'];
 
     public function getRouteKeyName()
     {

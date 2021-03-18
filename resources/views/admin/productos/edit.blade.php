@@ -1,19 +1,19 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Actividad')
+@section('title', 'Editar Producto')
 
-@section('Editar Actividad')
-    <h1>Cosco</h1>
+@section('content_header')
+    <h1>Editar Producto</h1>
 @stop
 
 @section('content')
 <div class="card">
     <div class="card-body">
-        {!! Form::model($actividade, ['route'=>['admin.actividades.update',$actividade], 'method'=>'put']) !!}
+        {!! Form::model($producto, ['route'=>['admin.productos.update',$producto], 'method'=>'put']) !!}
 
             <div class="form-group">
                 {!! Form::label('nombre', 'Nombre') !!}
-                {!! Form::text('nombre', null, ['class'=>'form-control','placeholder'=>'Ingrese El Nombre De La Actividad']) !!}
+                {!! Form::text('nombre', null, ['class'=>'form-control','placeholder'=>'Ingrese El Nombre Del Producto']) !!}
             
                 @error('nombre')
                     <span class="text-danger">{{ $message }}</span>
@@ -30,7 +30,16 @@
             </div>
 
             <div class="form-group">
-                {!! Form::submit('Actualizar Actividad', ['class'=>'btn btn-primary']) !!}
+                {!! Form::label('calidad', 'Calidad') !!}
+                {!! Form::text('calidad', null, ['class'=>'form-control','placeholder'=>'Ingrese El Nombre De La Calidad']) !!}
+            
+                @error('calidad')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                {!! Form::submit('Actualizar Pruducto', ['class'=>'btn btn-primary']) !!}
             </div>
             
 
