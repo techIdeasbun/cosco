@@ -20,9 +20,15 @@ class CreatePedidosTable extends Migration
             $table->string('codigo');
             $table->double('cantidad');
 
-            $table->unsignedBigInteger('usuario_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('asignaciontransporte_id');
+            $table->unsignedBigInteger('operadore_id');
+            $table->unsignedBigInteger('supervisione_id');
 
-            $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('operadore_id')->references('id')->on('operadores')->onDelete('cascade');
+            $table->foreign('supervisione_id')->references('id')->on('supervisiones')->onDelete('cascade');
+            $table->foreign('asignaciontransporte_id')->references('id')->on('asignaciontransportes')->onDelete('cascade');
 
             $table->timestamps();
         });

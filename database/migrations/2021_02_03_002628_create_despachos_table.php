@@ -24,22 +24,16 @@ class CreateDespachosTable extends Migration
             $table->string('modalidad');
             
             $table->unsignedBigInteger('ciudade_id');
-            $table->unsignedBigInteger('pedido_id');
-            $table->unsignedBigInteger('operadore_id');
-            $table->unsignedBigInteger('supervisione_id');
-            $table->unsignedBigInteger('bodega_id')->nullable();
-            $table->unsignedBigInteger('asignaciontransporte_id');
+            $table->unsignedBigInteger('pedido_id');            
+            $table->unsignedBigInteger('bodega_id')->nullable();            
             $table->unsignedBigInteger('bascula_id');
-            $table->unsignedBigInteger('usuario_id');
+            $table->unsignedBigInteger('user_id');
 
             $table->foreign('ciudade_id')->references('id')->on('ciudades')->onDelete('cascade');
-            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');
-            $table->foreign('operadore_id')->references('id')->on('operadores')->onDelete('cascade');
-            $table->foreign('supervisione_id')->references('id')->on('supervisiones')->onDelete('cascade');
-            $table->foreign('bodega_id')->references('id')->on('bodegas')->onDelete('cascade');
-            $table->foreign('asignaciontransporte_id')->references('id')->on('asignaciontransportes')->onDelete('cascade');
+            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');            
+            $table->foreign('bodega_id')->references('id')->on('bodegas')->onDelete('cascade');            
             $table->foreign('bascula_id')->references('id')->on('basculas')->onDelete('cascade');
-            $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();
         });
