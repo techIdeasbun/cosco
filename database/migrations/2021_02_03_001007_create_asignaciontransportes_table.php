@@ -20,11 +20,11 @@ class CreateAsignaciontransportesTable extends Migration
 
             $table->unsignedBigInteger('transporte_id');
             $table->unsignedBigInteger('ciudade_id');
-            $table->unsignedBigInteger('pedido_id');
+            
 
             $table->foreign('transporte_id')->references('id')->on('transportes')->onDelete('cascade');
             $table->foreign('ciudade_id')->references('id')->on('ciudades')->onDelete('cascade');
-            $table->foreign('pedido_id')->references('id')->on('pedidos')->onDelete('cascade');
+            
             
             $table->timestamps();
         });

@@ -275,49 +275,45 @@ return [
             'route'  => 'admin.supervisiones.index',
             'icon' => 'fas fa-fw fa-user-check',
         ],
-        [
-            'text' => 'Administrar Transporte',
-            'route'  => 'admin.transportes.index',
-            'icon' => 'fas fa-fw fa-shuttle-van',
+                [
+            'text' => 'Administrar Pedido',
+            'route'  => 'admin.pedidos.index',
+            'icon' => 'fas fa-fw fa-cart-arrow-down',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
+            'text' => 'Transporte',
+            'icon' => 'fas fa-fw fa-shuttle-van',
+            'submenu' =>[
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Administrar Transporte',
+                    'route'  => 'admin.transportes.index',
+                    'icon' => 'fas fa-fw fa-shuttle-van',
                 ],
                 [
-                    'text'    => 'level_one',
-                    'url'     => '#',
+                    'text' => 'Calificar Transporte',
+                    'icon' => 'fas fa-fw fa-shuttle-van',
                     'submenu' => [
                         [
-                            'text' => 'level_two',
-                            'url'  => '#',
+                            'text' => 'Calificar Accidente',
+                            'route'  => 'admin.accidentes.create',
+                            'icon' => 'fas fa-fw fa-shuttle-van',
                         ],
                         [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
+                            'text' => 'Calificar Disponibilidad',
+                            'route'  => 'admin.disponibilidades.index',
+                            'icon' => 'fas fa-fw fa-shuttle-van',
+                        ],  
+                        [
+                            'text' => 'Calificar Entrega',
+                            'route'  => 'admin.entregas.index',
+                            'icon' => 'fas fa-fw fa-shuttle-van',
+                        ],                      
                     ],
                 ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
+               
             ],
-        ],
+        ],          
+        
         ['header' => 'labels'],
         [
             'text'       => 'important',

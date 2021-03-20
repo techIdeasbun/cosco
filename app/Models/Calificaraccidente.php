@@ -9,6 +9,9 @@ class Calificaraccidente extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['valoracion', 'ciudade_id','transporte_id'];
+
+    
     // Relacion Uno A Muchos Inversa
 
     public function ciudad(){

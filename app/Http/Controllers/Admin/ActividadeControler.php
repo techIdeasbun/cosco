@@ -56,7 +56,7 @@ class ActividadeControler extends Controller
     {
         $request->validate([
             'nombre'=>'required|unique:actividades',
-            'slug' => "required|unique:actividades, slug, $actividade->id"
+            'slug' => 'required|unique:actividades'
         ]);
 
         $actividade->update($request->all());
