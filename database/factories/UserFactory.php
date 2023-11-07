@@ -34,7 +34,7 @@ class UserFactory extends Factory
             'direccion' => $this->faker->streetAddress(true),
             'telefono' => $this->faker->phoneNumber(),
             'identificacion' => $this->faker->unique()->numberBetween(6000000, 2000000000),
-            'role_id' => Role::all()->random()->id,
+            
         ];
     }
 
