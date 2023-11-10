@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Livewire\Usuarios;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('/usuarios', 'usuarios')->name('usuarios');
+
+//Route::get('/usuarios', Usuarios::class)->name('usuarios');
 
 Route::middleware([
     'auth:sanctum',
