@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('pedido_ciudad', function (Blueprint $table) {
             $table->id();
+            $table->double('flete');
             $table->timestamps();
 
             $table->unsignedBigInteger('pedido_id');

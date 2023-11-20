@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pedidos', function (Blueprint $table) {
-            $table->id();
-            $table->double('flete');
+            $table->id();           
             $table->double('cantidad');            
             $table->timestamps();
 

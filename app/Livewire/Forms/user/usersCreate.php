@@ -25,6 +25,9 @@ class usersCreate extends Form
     #[Rule('required')]
     public $identificacion;   
 
+    #[Rule('required')]
+    public $role;
+
     // #[Rule('required')]
     public $password;
 
@@ -36,6 +39,7 @@ class usersCreate extends Form
         $this->password = bcrypt('password');
         $this->validate();
         $user = User::create($this->only('name', 'email', 'direccion', 'telefono', 'identificacion', 'password'));
+        $user->roles()->attach($this->role);
         $user->save();    
         $this->reset();       
         

@@ -23,65 +23,48 @@
                     <input type="text" wire:model.live="buscar" placeholder="Buscar"
                         class="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg md:w-80 placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
                 </div>
-                <button wire:click="$set('usersCreate.modalC', true)"
+                <button wire:click="$set('basculaCreate.modalC', true)"
                     class="flex items-center justify-center w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-blue-500 rounded-lg shrink-0 sm:w-auto gap-x-2 hover:bg-blue-600 dark:hover:bg-blue-500 dark:bg-blue-600">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span>Nuevo Usuario</span>
+                    <span>Nueva Bascula</span>
                 </button>
-                
+    
             </div>
             <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
                 <thead class="bg-gray-50">
                     <tr>
                         <th scope="col" class="px-6 py-4 font-medium text-gray-900">Nombre</th>
-                        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Identificacion</th>
-                        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Perfil</th>
+                        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Nit</th>
+                        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Telefono</th>
                         <th scope="col" class="px-6 py-4 font-medium text-gray-900">Direccion</th>
                         <th scope="col" class="px-6 py-4 font-medium text-gray-900"></th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-                    @foreach ($users as $user)
+                    @foreach ($basculas as $bascula)
                     <tr class="hover:bg-gray-50">
                         <th class="flex gap-3 px-6 py-4 font-normal text-gray-900">
-                            <div class="relative h-10 w-10">
-                                <img class="w-8 h-8 rounded-full" src="{{ $user->profile_photo_url }}" width="32"
-                                    height="32" alt="{{ $user->name }}" />
-                                <span
-                                    class="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
-                            </div>
                             <div class="text-sm">
-                                <div class="font-medium text-gray-700">{{ $user->name }}</div>
-                                <div class="text-gray-400">{{ $user->email}}</div>
+                                <div class="font-medium text-gray-700">{{ $bascula->name }}</div>
                             </div>
                         </th>
-                        <td class="px-6 py-4">{{ $user->identificacion }}</td>                        
-                        <td class="px-6 py-4">
-                            @forelse ($user->roles as $role)
-                                <span class="badge badge-info">
-                                    {{ $role->name }}
-                                </span>
-                            @empty
-                                <span class="badge badge-dange">
-                                    No Roles
-                                </span>
-                            @endforelse
-                        </td>
-                        <td class="px-6 py-4">{{ $user->direccion }}</td>
+                        <td class="px-6 py-4">{{ $bascula->nit }}</td>
+                        <td class="px-6 py-4">{{ $bascula->telefono }}</td>
+                        <td class="px-6 py-4">{{ $bascula->direccion }}</td>
                         <td class="px-6 py-4">
                             <div class="flex justify-end gap-4">
-                                <button wire:click="destroy({{ $user->id }})">
+                                <button wire:click="destroy({{ $bascula->id }})">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="h-6 w-6" x-tooltip="tooltip">
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
                                     </svg>
                                 </button>
-                                <button wire:click="edit({{ $user->id }})">
+                                <button wire:click="edit({{ $bascula->id }})">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="h-6 w-6" x-tooltip="tooltip">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -95,17 +78,16 @@
                 </tbody>
             </table>
             <div>
-                {{ $users->links() }}
+                {{ $basculas->links() }}
             </div>
         </section>
-
-        {{-- Formulario de creacion de Usuarios Nuevos --}}
+        {{-- Formulario de creacion de Nuevo operador portueario --}}
         <form wire:submit="save">
-            <x-dialog-modal wire:model="usersCreate.modalC">
+            <x-dialog-modal wire:model="basculaCreate.modalC">
                 <x-slot name="title">
-                    Nuevo Usuario
+                    Nueva Bascula Camionera
                 </x-slot>
-
+    
                 <x-slot name="content">
                     <div class="space-y-12">
                         <div class="px-6 pt-10 border-b border-gray-900/10 ">
@@ -117,90 +99,64 @@
                             <h2 class="text-base font-semibold leading-7 text-gray-900">Informacion Personal</h2>
                             <p class="mt-1 text-sm leading-6 text-gray-600">Utilice una dirección permanente donde pueda
                                 recibir correo.</p>
-
+    
                             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                                 <div class="sm:col-span-full">
                                     <x-label>
                                         Nombre
                                     </x-label>
-                                    <x-input class="w-full" wire:model="usersCreate.name" />
-                                    <x-input-error for="usersCreate.name" />
+                                    <x-input class="w-full" wire:model="basculaCreate.name" />
+                                    <x-input-error for="basculaCreate.name" />
                                 </div>
-
+    
                                 <div class="sm:col-span-full">
                                     <x-label>
-                                        Correo Electtronico
+                                        Nit
                                     </x-label>
-                                    <x-input class="w-full" wire:model="usersCreate.email" />
-                                    <x-input-error for="usersCreate.email" />
+                                    <x-input class="w-full" wire:model="basculaCreate.nit" />
+                                    <x-input-error for="basculaCreate.nit" />
                                 </div>
-
-                                <div class="sm:col-span-3 sm:col-start-1">
-                                    <x-label>
-                                        Identificacion
-                                    </x-label>
-                                    <x-input class="w-full" wire:model="usersCreate.identificacion" />
-                                    <x-input-error for="usersCreate.identificacion" />
-                                </div>
-
+    
                                 <div class="sm:col-span-3">
                                     <x-label>
                                         Telefono
                                     </x-label>
-                                    <x-input class="w-full" wire:model="usersCreate.telefono" />
-                                    <x-input-error for="usersCreate.telefono" />
+                                    <x-input class="w-full" wire:model="basculaCreate.telefono" />
+                                    <x-input-error for="basculaCreate.telefono" />
                                 </div>
-
+    
                                 <div class="col-span-full">
                                     <x-label>
                                         Direccion
                                     </x-label>
-                                    <x-input class="w-full" wire:model="usersCreate.direccion" />
-                                    <x-input-error for="usersCreate.direccion" />
+                                    <x-input class="w-full" wire:model="basculaCreate.direccion" />
+                                    <x-input-error for="basculaCreate.direccion" />
                                 </div>
-
-                                <div class="col-span-full">
-                                    <x-label>
-                                        Perfil de Usuario
-                                    </x-label>
-                                    <x-select class="w-full" wire:model="usersCreate.role">
-                                        <option value="" disabled>
-                                            Selecciona Un Rol
-                                        </option>
-                                        @foreach ( $roles as $role)
-                                        <option value="{{ $role->id }}">
-                                            {{ $role->name }} 
-                                        </option>
-                                        @endforeach
-                                    </x-select>
-                                    <x-input-error for="usersCreate.role" />
-                                </div>
-
                             </div>
                         </div>
                     </div>
                 </x-slot>
-
+    
                 <x-slot name="footer">
                     <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                         <x-button>
                             Crear
                         </x-button>
-                        <x-danger-button class="mr-2" wire:click="$set('usersCreate.modalC', false)">
+                        <x-danger-button class="mr-2" wire:click="$set('basculaCreate.modalC', false)">
                             Cancelar
                         </x-danger-button>
                     </div>
                 </x-slot>
             </x-dialog-modal>
         </form>
-
+    
         {{-- Formulario de Edision de Usuarios --}}
-        <form wire:submit="update({{ $user->id }})">
-            <x-dialog-modal wire:model="usersEdit.modalE">
+        <form wire:submit="update()">
+            <x-dialog-modal wire:model="basculaEdit.modalE">
                 <x-slot name="title">
-                    Editar Usuario
+                    Editar Bascula camionera
                 </x-slot>
-
+    
                 <x-slot name="content">
                     <div class="space-y-12">
                         <div class="px-6 pt-10 border-b border-gray-900/10 ">
@@ -212,72 +168,50 @@
                             <h2 class="text-base font-semibold leading-7 text-gray-900">Informacion Personal</h2>
                             <p class="mt-1 text-sm leading-6 text-gray-600">Utilice una dirección permanente donde pueda
                                 recibir correo.</p>
-
+    
                             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                                 <div class="sm:col-span-full">
                                     <x-label>
                                         Nombre
                                     </x-label>
-                                    <x-input class="w-full" wire:model="usersEdit.name" />
-                                    <x-input-error for="usersEdit.name" />
+                                    <x-input class="w-full" wire:model="basculaEdit.name" />
+                                    <x-input-error for="basculaEdit.name" />
                                 </div>
-
+    
                                 <div class="sm:col-span-full">
                                     <x-label>
-                                        Correo Electtronico
+                                        Nit
                                     </x-label>
-                                    <x-input class="w-full" wire:model="usersEdit.email" />
-                                    <x-input-error for="usersEdit.email" />
+                                    <x-input class="w-full" wire:model="basculaEdit.nit" />
+                                    <x-input-error for="basculaEdit.nit" />
                                 </div>
-
-                                <div class="sm:col-span-3 sm:col-start-1">
-                                    <x-label>
-                                        Identificacion
-                                    </x-label>
-                                    <x-input class="w-full" wire:model="usersEdit.identificacion" />
-                                    <x-input-error for="usersEdit.identificacion" />
-                                </div>
-
+    
                                 <div class="sm:col-span-3">
                                     <x-label>
                                         Telefono
                                     </x-label>
-                                    <x-input class="w-full" wire:model="usersEdit.telefono" />
-                                    <x-input-error for="usersEdit.telefono" />
+                                    <x-input class="w-full" wire:model="basculaEdit.telefono" />
+                                    <x-input-error for="basculaEdit.telefono" />
                                 </div>
-
+    
                                 <div class="col-span-full">
                                     <x-label>
                                         Direccion
                                     </x-label>
-                                    <x-input class="w-full" wire:model="usersEdit.direccion" />
-                                    <x-input-error for="usersEdit.direccion" />
-                                </div>
-
-                                <div class="col-span-full">
-                                    <x-label>
-                                        Perfil de Usuario
-                                    </x-label>
-                                    <x-select class="w-full" wire:model="usersEdit.role">
-                                        <option value="" disabled>
-                                            Selecciona Un Rol
-                                        </option>
-                                        @foreach ( $roles as $role)
-                                        <option value="{{ $role->id }}">{{ $role->name }} </option>
-                                        @endforeach
-                                    </x-select>
+                                    <x-input class="w-full" wire:model="basculaEdit.direccion" />
+                                    <x-input-error for="basculaEdit.direccion" />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </x-slot>
-
+    
                 <x-slot name="footer">
                     <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                         <x-button>
                             Actualizar
                         </x-button>
-                        <x-danger-button class="mr-2" wire:click="$set('usersEdit.modalE', false)">
+                        <x-danger-button class="mr-2" wire:click="$set('basculaEdit.modalE', false)">
                             Cancelar
                         </x-danger-button>
                     </div>

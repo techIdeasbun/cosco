@@ -19,6 +19,12 @@ Route::get('/', function () {
 
 Route::view('/usuarios', 'usuarios')->name('usuarios');
 
+Route::view('/logistica', 'logistica')->name('logistica');
+Route::view('/operadores', 'operadores')->name('operadores');
+Route::view('/supervision', 'supervision')->name('supervision');
+Route::view('/bascula', 'bascula')->name('bascula');
+Route::view('/bodega', 'bodega')->name('bodega');
+
 //Route::get('/usuarios', Usuarios::class)->name('usuarios');
 
 Route::middleware([

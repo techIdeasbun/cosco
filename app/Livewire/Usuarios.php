@@ -8,6 +8,7 @@ use Livewire\Component;
 use App\Models\User;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
+use Spatie\Permission\Models\Role;
 
 
 class Usuarios extends Component
@@ -23,7 +24,12 @@ class Usuarios extends Component
     public $modalc = false;
     public $modalE = false;
 
-    public $buscar;
+    public $buscar, $roles;
+
+    public function mount()
+    {
+        $this->roles = Role::all();
+    }
 
     public function render()
     {
@@ -36,14 +42,14 @@ class Usuarios extends Component
         $this->usersCreate->save();
         $this->resetPage('');
 
-        $this->dispatch('post-created', 'Nuevo Articulo Creado');
+        $this->dispatch('post-created', 'Nuevo Usuario Creado');
     }
 
     public function edit($userId)
     {
         $this->resetValidation();
         $this->usersEdit->edit($userId);
-        $this->dispatch('post-created', 'Articulo Actualizado');
+        $this->dispatch('post-created', 'AUsuario Actualizado');
     }
 
     public function update($id)
@@ -55,7 +61,7 @@ class Usuarios extends Component
     {
         $user = User::find($userId);
         $user->delete();        
-        $this->dispatch('post-created', 'Articulo Eliminado');
+        $this->dispatch('post-created', 'Usuario Eliminado');
     }
     
 }

@@ -21,10 +21,8 @@
 
 <body class="font-sans antialiased">
     <x-banner />
-
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div>
         @livewire('navigation-menu')
-
         <!-- Page Heading -->
         @if (isset($header))
         <header class="bg-white dark:bg-gray-800 shadow">
@@ -33,16 +31,16 @@
             </div>
         </header>
         @endif
-        {{-- <x-sidebar /> --}}
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
+        <div class="flex flex-col flex-1">
+        <div class="flex h-screen ">        
+            <x-sidebar />
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
+        </div>
     </div>
-
-    @stack('modals')
-
     @livewireScripts
 </body>
-
 </html>

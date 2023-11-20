@@ -21,7 +21,10 @@ class usersEdit extends Form
     public $telefono;
 
     #[Rule('required')]
-    public $identificacion;   
+    public $identificacion;
+    
+    #[Rule('required')]
+    public $role;
     
     public $userId ='';
     public $modalE = false;
@@ -50,6 +53,8 @@ class usersEdit extends Form
         $user->update(
             $this->only('name', 'email', 'direccion', 'telefono', 'identificacion')
         );
+
+        $user->roles()->sync($this->role);
         
         $this->reset();
     }
