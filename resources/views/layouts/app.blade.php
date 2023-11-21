@@ -22,7 +22,7 @@
 <body class="font-sans antialiased">
     <x-banner />
     <div>
-        @livewire('navigation-menu')
+        <x-navigation />
         <!-- Page Heading -->
         @if (isset($header))
         <header class="bg-white dark:bg-gray-800 shadow">

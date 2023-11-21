@@ -13,7 +13,10 @@ class Transporte extends Model
         'name',
         'nit',
         'direccion',
-        'telefono',        
+        'telefono',
+        'calificaraccidente_id',
+        'calificardisponibilidade_id',
+        'calificarentrega_id'        
     ];
 
     public function pedidotransporte(){

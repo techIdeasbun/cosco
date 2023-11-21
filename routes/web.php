@@ -24,6 +24,10 @@ Route::view('/operadores', 'operadores')->name('operadores');
 Route::view('/supervision', 'supervision')->name('supervision');
 Route::view('/bascula', 'bascula')->name('bascula');
 Route::view('/bodega', 'bodega')->name('bodega');
+Route::view('/ciudad', 'ciudad')->name('ciudad');
+Route::view('/transportes', 'transportes')->name('transportes');
+Route::view('/actividad', 'actividad')->name('actividad');
+Route::view('/productos', 'productos')->name('productos');
 
 //Route::get('/usuarios', Usuarios::class)->name('usuarios');
 

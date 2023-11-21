@@ -27,7 +27,8 @@
 									</p>
 								</div>
 								<div class="px-1 py-4">
-									<a href="{{ route('operadores') }}" class="text-blue-500 hover:underline">Ingresar...</a>
+									<a href="{{ route('operadores') }}"
+										class="text-blue-500 hover:underline">Ingresar...</a>
 								</div>
 							</div>
 							<div class="bg-white rounded-lg border p-4">
@@ -44,7 +45,8 @@
 									</p>
 								</div>
 								<div class="px-1 py-4">
-									<a href="{{ route('supervision') }}" class="text-blue-500 hover:underline">Ingresar...</a>
+									<a href="{{ route('supervision') }}"
+										class="text-blue-500 hover:underline">Ingresar...</a>
 								</div>
 							</div>
 							<div class="bg-white rounded-lg border p-4">
@@ -61,7 +63,8 @@
 									</p>
 								</div>
 								<div class="px-1 py-4">
-									<a href="{{ route('bascula') }}" class="text-blue-500 hover:underline">Ingresar...</a>
+									<a href="{{ route('bascula') }}"
+										class="text-blue-500 hover:underline">Ingresar...</a>
 								</div>
 							</div>
 							<div class="bg-white rounded-lg border p-4">
@@ -78,7 +81,8 @@
 									</p>
 								</div>
 								<div class="px-1 py-4">
-									<a href="{{ route('bodega') }}" class="text-blue-500 hover:underline">Ingresar...</a>
+									<a href="{{ route('bodega') }}"
+										class="text-blue-500 hover:underline">Ingresar...</a>
 								</div>
 							</div>
 							<!-- Add more items as needed -->
