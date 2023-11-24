@@ -66,7 +66,7 @@
                                     id="user-menu-item-0">transporte</a>
                                 <a href="{{ route('actividad') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                     id="user-menu-item-0">Actividad</a>
-                                <a href="productos" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                <a href="{{ route('productos') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                     id="user-menu-item-0">producto</a>    
                             </div>
                         </div>

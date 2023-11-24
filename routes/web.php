@@ -28,6 +28,7 @@ Route::view('/ciudad', 'ciudad')->name('ciudad');
 Route::view('/transportes', 'transportes')->name('transportes');
 Route::view('/actividad', 'actividad')->name('actividad');
 Route::view('/productos', 'productos')->name('productos');
+Route::view('/pedido', 'pedido')->name('pedido');
 
 //Route::get('/usuarios', Usuarios::class)->name('usuarios');
 

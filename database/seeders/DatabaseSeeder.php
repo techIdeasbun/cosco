@@ -16,7 +16,7 @@ use App\Models\Calificaraccidente;
 use App\Models\Calificardisponibilidade;
 use App\Models\Calificarentrega;
 use App\Models\Transporte;
-use Spatie\Permission\Models\Role;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,15 +27,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {       
-        Role::factory()->create([
-            'name' => 'Administrador',
-        ]);
-        Role::factory()->create([
-            'name' => 'Coordinador',
-        ]);
-        Role::factory()->create([
-            'name' => 'Operario',
-        ]);
+        
 
         User::factory()->create([
             'name' => 'Gabriel Fernando Valencia Estrella',
